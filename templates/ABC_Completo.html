@@ -1,0 +1,40 @@
+{% extends "layout2.html" %}
+    {% import '_macros.html' as macros %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+        <h3>Empleados</h3>
+        <table class="table table-stripped table-bordered">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                    <th>Email</th>
+                    <th>Sueldo</th>
+                    <th>Elimnar</th>
+                    <th>Editar</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for empleados in empleados %}
+                <tr>
+                    <td>{{empleados.nombre}}</td>
+                    <td>{{empleados.direccion}}</td>
+                    <td>{{empleados.telefono}}</td>
+                    <td>{{empleados.email}}</td>
+                    <td>{{empleados.sueldo}}</td>
+                    <td><a href="eliminar.html?id={{empleados.id}}" class="btn btn-danger">Eliminar</a></td>
+                    <td><a href="editar.html?id={{empleados.id}}" class="btn btn-warning">Editar</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+            
+        </table>
+    </div>
+</div>
+{% endblock %}
