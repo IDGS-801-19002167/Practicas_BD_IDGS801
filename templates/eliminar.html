@@ -1,0 +1,48 @@
+{% extends "layout2.html" %}
+{% block content %}
+
+{% import '_macros.html' as macros %}
+            <h1>Formulario de Empleados</h1>
+
+            <form name="sent" action="/eliminar" id="contactForm" method="POST" >
+                <div class="row control-row">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        {{macros.camposNuevos(form.id, class="form-control")}}        
+                    </div>
+                </div>
+                <div class="row control-row">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        {{macros.camposNuevos(form.nombre, class="form-control")}}        
+                    </div>
+                </div>
+                <div class="row control-row">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        {{macros.camposNuevos(form.direccion, class="form-control")}}        
+                    </div>
+                </div>
+                <div class="row control-row">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        {{macros.camposNuevos(form.telefono, class="form-control")}}        
+                    </div>
+                </div>
+                <div class="row control-row">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        {{macros.camposNuevos(form.email, class="form-control")}}        
+                    </div>
+                </div>
+                <div class="row control-row">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        {{macros.camposNuevos(form.sueldo, class="form-control")}}        
+                    </div>
+                </div>
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+
+
+                <input class="btn btn-danger" type="submit" id="eliminar" name="eliminar" value="Eliminar">
+                <a href="ABC_Completo.html" class="btn btn-success">
+                    <i class="icon-undo icon-white"></i>Cancelar
+                </a>
+            </form>
+
+
+{% endblock %}

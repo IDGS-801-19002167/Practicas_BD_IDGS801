@@ -8,10 +8,18 @@
 <!-- End Macro attr -->
 {% endmacro %}
 
+{% macro rds (value) %}
+<input type="radio" name="tamanio" id="" value="{{ value }}" class="form-check-input">
+{% endmacro %}
+
+{% macro checks (type = "", class = "", name="", value ="", id="") %}
+<input type="{{ type }}" class="{{ class }}" name="{{ name }}" value="{{ value }}" id="{{ id }}"/>
+{% endmacro %}
+
 {% macro camposNuevos (field) %}
 
 <td>
-    {{ field.label }}
+    {{ field.input }}
 </td>
 
 <dd>
